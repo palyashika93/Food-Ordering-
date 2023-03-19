@@ -1,0 +1,471 @@
+<!-- End Header -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Delicious Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Delicious - v4.7.0
+  * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+      <i class="bi bi-phone d-flex align-items-center"><span>+91 25466</span></i>
+      <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Sat: 11:00 AM - 23:00 PM</span></i>
+      
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <div class="logo me-auto">
+        {% if message %}
+        <h1><a href="">Welcome,{{message}}</a></h1>
+        {% else %}
+        <h1><a href="">Delicious</a></h1>
+        {% endif %}
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!--<a href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"></a>-->      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
+          <li><a class="nav-link scrollto" href="#events">Events</a></li>
+          
+          <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+          {% if request.session.customer %}
+          <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+          {% else %}
+          <li><a class="nav-link scrollto" href="/register">Register</a></li>
+          <li><a class="nav-link scrollto" href="/login">Login</a></li>
+          {% endif %}
+          <li><a class="nav-link scrollto" href="/myorders">My Orders</a></li>
+    
+         
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="/booktable" class="book-a-table-btn scrollto">Book a table</a>
+      <a href="/orderpanel" class="book-a-table-btn scrollto">Order Now</a>
+    
+    </div>
+  </header>
+  <!--hero section-->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background: url({%static 'assets/img/slide/slide-1.jpg' %});">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown"><span>Delicious</span> Restaurant</h2>
+                
+                <p class="animate__animated animate__fadeInUp">PULL UP A TASTE.TAKE A TASTE.COME JOIN US.LIFE IS TOO ENDLESSELY DELICIOUS.</p>
+               
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background: url({%static 'assets/img/slide/slide-2.jpg' %});">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown"><span>Fine</span> Dining</h2>
+                <p class="animate__animated animate__fadeInUp">THE TRUE MARK OF PROFESSIONALS IS THE ABILITY T RESPECT EVERYONE ELSE FOR THEIR STYLES AND ALWAYS FIND SOMETHING POSITIVE IN EVERY DINING EXPERIENCE AND HIGHLIGHT IT IN YOUR THOUGHTS AND WORDS.</p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background: url({%static 'assets/img/slide/slide-3.jpg' %});">
+            <div class="carousel-background"><img src="assets/img/slide/slide-3.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown"><span>Our</span> Tradition</h2>
+                <p class="animate__animated animate__fadeInUp">WE BASICALLY MADE INDIAN FOODS.
+                  INDIAN FOOD IS LIKE CLASSICAL MUSIC RAGA .....IT TAKES TIME TO BUILD UP TO A CRESCENDO
+                  </p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section>  
+
+  <!-- ======= Hero Section ======= -->
+ <!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/about.jpg");'>
+            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+
+            <div class="content">
+              <h3>You’ll be transported … to an ethereal realm where <strong>chef Delicious creates one of the premier dining experiences in the world.</strong></h3>
+              <p>
+                Refined beauty that isn’t affected by time or social changes. Purity of being, of living, of sensing is inherent in all elements of the DELICIOUS experience.
+              </p>
+              <p class="fst-italic">
+                DELICIOUS operating hours for indoor dining are Monday-Saturday, 11am–23:00pm. Please note that are closed on Thursday for lunch and not open for service Sunday. DELICIOUS is currently accepting reservations by email or messages. 
+              </p>
+              <ul>
+                <li><i class="bx bx-check-double"></i> CUISINE : North Indian,Mughlai,Chinese,Italian,Europian.</li>
+                <li><i class="bx bx-check-double"></i> TYPE : All types parties available</li>
+                <li><i class="bx bx-check-double"></i>FACILITIES & FEATURES :Air Conditioned,WIFI,Parking,Differently abled Friend,Cards accepted,Full bar available.</li>
+              </ul>
+              <p>
+           This reservation guarantees seating at our carefully crafted food counter with one of our highly skilled food Chefs. Please allow approximately two hours for the dining experience. The dress code is casual and comfortable.
+           Please be advised of our Cancellation Policy. Should you need to cancel, change your reservation date, or decrease the number of guests. For parties up to 4 guests, cancellations must be made at least 48 hours prior to the reservation date. For parties of 5 or more, cancellations must be made at least one week (7 days) prior to the reservation date. Please note failure to cancel or make any changes after your cancellation window forfeits your deposit.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Whu Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Why choose <span>Our Restaurant</span></h2>
+          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        </div>
+
+        <div class="row">
+
+        {% for feature in features %}
+          <div class="col-lg-4">
+            <div class="box">
+              <span>{{feature.number}}</span>
+              <h4>{{feature.title}}</h4>
+              <p>{{feature.body}}</p>
+            </div>
+          </div>
+        {% endfor %}  
+
+         
+
+        </div>
+
+      </div>
+    </section><!-- End Whu Us Section -->
+
+
+    <!-- ======= Specials Section ======= -->
+    <section id="specials" class="specials">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Check our <span>Specials</span></h2>
+          <p>We have Delicious Speciality of food for you. "if you don't have a seat at the table you're probably on the menu "</p>
+        </div>
+
+        <div class="row">
+        
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Idli twist</a>
+              </li>
+             <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Pineberrint Salad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Soupy Asian Noodles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Jingals Specials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Black ManBan  Salad</a>
+              </li>
+            </ul>
+          </div>
+       
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Idli is nothing but the batter post steam bath.</h3>
+                    <p class="fst-italic">Its very simple but tasty.</p>
+                    <p>Idli or idly are a type of savoury rice cake, originating from the Indian subcontinent, popular as breakfast foods in Southern India and in Sri Lanka. The cakes are made by steaming a batter consisting fermented black lentils (de-husked) and rice.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'assets/img/specials-1.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Spiky on the outside Sweet on the inside</h3>
+                    <p class="fst-italic">Tangy pineapple and blackberry combo with a mint for refreshment.</p>
+                    <p>Honey and mint jazz up this quick-to-make berry and pineapple fruit salad with fresh tropical flavors!</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'assets/img/specials-2.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Everything you see I owe to Noodles.</h3>
+                    <p class="fst-italic">Your mouth can't stop after seeing this!</p>
+                    <p>Boiled noodles, filtered and mixed with vegetables and/or various meat items. A Tibetan influenced dish, the Nepalese version contains more spice such as chili powder, and masala. Popular in Nepal and amongst the Nepalese and Tibetan diasporas in the neighbouring Indian state of Sikkim and within the Darjeeling district of West Bengal</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'assets/img/specials-3.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Some guys live for "crunch time" I'm one of them.</h3>
+                    <p class="fst-italic">Somewhere it is salty peanuts and crunchiest Fun</p>
+                    <p>A variation on Levantine fatteh, fattet hummus typically consists of toasted or fried pieces of pita bread and chickpeas that have been layered in a serving dish before being drenched in a garlicky tahini-yogurt sauce.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'assets/img/specials-4.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>The only bar I go to is the salad bar</h3>
+                    <p class="fst-italic">The combo of Banana Blackberry and Mango salad.</p>
+                    <p>You feel the Sweetest Mango Fresh bananas and Blackberry twist with Some Our specials Masala Sprinkle on it You realize the Feeling of Heaven here After Taste Our special Tangy Sweetest And Pleasant Salad</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{% static 'assets/img/specials-5.jpg' %}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Specials Section -->
+
+    <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Organize Your <span>Events</span> in our Restaurant</h2>
+        </div>
+
+        <div class="events-slider swiper">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'assets/img/event-birthday.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Birthday Parties</h3>
+                  <div class="price">
+                    <p><span>Rs.5000 for 3 Person</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Whether celebrating a special occasion with family and friends or hosting a corporate event.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circle"></i>CUISINE : North Indian,Mughlai,Chinese.</li>
+                    <li><i class="bi bi-check-circle"></i>TYPE: Casual Dining</li>
+                    <li><i class="bi bi-check-circle"></i> FACILITIES & FEATURES :Air Conditioned,WIFI,Parking,Differently abled Friend,Cards accepted,Full bar available.</li>
+                  </ul>
+                  <p>
+                    Whether celebrating a birthday, anniversary or wedding or having a corporate event, DELICIOUS can accommodate your private event needs. We can host your event overlooking the midtown skyline in our convenient location with valet parking and friendly, experienced, full-time servers.
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'assets/img/event-private.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Private Parties</h3>
+                  <div class="price">
+                    <p><span>Rs.2,600 for Two person.</span></p>
+                  </div>
+                  <p class="fst-italic">
+                   
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circle"></i>CUISINE : North Indian,Mughlai,Chinese.</li>
+                    <li><i class="bi bi-check-circle"></i>TYPE: Private Dining</li>
+                    <li><i class="bi bi-check-circle"></i> FACILITIES & FEATURES :Air Conditioned,WIFI,Parking,Differently abled Friend,Cards accepted,Full bar available.</li>
+                  </ul>
+                  <p>
+                    DELICIOUS has two exclusively private dining rooms on site. The private dining menu features Chef Joey's innovative steakhouse fare & offers menu selections including family style appetizers and side dishes, salads, entrees and desserts. Custom menus are available upon request.
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'assets/img/event-custom.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Custom Parties</h3>
+                  <div class="price">
+                    <p><span>Rs.3000 for 3 person</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    From custom menus to impeccable service, DELICIOUS offers personalized services at every level. From the freshest food to the finest aged steaks, we will exceed your expectations.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circle"></i>CUISINE : North Indian,Mughlai,Chinese.</li>
+                    <li><i class="bi bi-check-circle"></i>TYPE: Custom Dining</li>
+                    <li><i class="bi bi-check-circle"></i> FACILITIES & FEATURES :Air Conditioned,WIFI,Parking,Differently abled Friend,Cards accepted,Full bar available.</li>
+                  </ul>
+                  <p>
+                    Contemporary luxurious modern steakhouse with a warm inviting décor. Beautifully and expertly prepared cuisines that consistently receive exemplary reviews. Superior, gracious and professional service.
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Events Section -->
+
+    <!-- ======= Book A Table Section ======= -->
+   <!-- End Book A Table Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <!-- End Gallery Section -->
+
+    
+
+    <!-- ======= Contact Section ======= -->
+    <!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Delicious</h3>
+      <p>Purity of being, of living, of sensing is inherent in all elements of the DELICIOUS experience.</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+
+
+</body>
+
+</html> 
